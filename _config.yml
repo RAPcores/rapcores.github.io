@@ -1,1 +1,5 @@
 theme: jekyll-theme-cayman
+title: RAPcores
+description: Robotic Application Processing Cores
+github:
+  docs: https://rapcores.github.io/rapcores/
