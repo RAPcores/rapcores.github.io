@@ -1,5 +1,6 @@
 theme: jekyll-theme-minimal
 title: RAPcores
-description: Robotic Application Processing Cores
+description: Robotic Application Processing Cores. We are building advanced motion and motor controls on FPGA and ASIC, fully open source from bits to gates.
 github:
-  docs: https://rapcores.github.io/rapcores/
+  docs: https://rapcores.org/rapcores/
+url: https://rapcores.org
