@@ -39,8 +39,8 @@ so we are still getting up to speed on managing complexity of HDL projects.
 A key aspect of managing complexity in Verilog is the use of parametrics.
 These may be thought of as templates in C++ or the like. Given some static
 options (parameters) the source code may be transformed before interpretation
-to generate specfic code for a given module or function. It is common in traditional
-programming languages to use templates to elide unnessecary logic or vary data type
+to generate specific code for a given module or function. It is common in traditional
+programming languages to use templates to elide unnecessary logic or vary data type
 sizes. In Verilog parameters are very much used the same to change port widths or logic flows.
 
 Recently we added parametric cosine table generators in [#203](https://github.com/RAPcores/rapcores/pull/203).
@@ -54,7 +54,7 @@ external build tools, allowing for better portability.
 Speaking of portability, I started a proof-of-concept for an [FPGA HAL](https://github.com/RAPcores/fpga-hal). The purpose of the
 demonstrations was to port the Ice40 PLL calculations to Verilog such that they are evaluated
 based on parameters using constant functions. This project started as a challenge to
-understand the limits of parametric Verilog, and I was uncertain if diophantine equations could be solved while 
+understand the limits of parametric Verilog, and I was uncertain if Diophantine equations could be solved while 
 retaining sythensizable verilog. However the results are promising so far, and this
 approach could lead to improved portability of Verilog between FPGAs. We currently
 only use a few PLLs, and only a small component of board configuration is done in Make,
@@ -68,11 +68,11 @@ Since Verilog and System Verilog are under the same IEEE1800 standard, the futur
 is in System Verilog, with Verilog remaining the subset of Systems Verilog.
 We have started by enabling Systems Verilog support
 in Yosys and IVerilog, which is a [few line change](https://github.com/RAPcores/rapcores/pull/204/files) to the build scripts. This has already improved warnings
-and error reporting, as System Verilog disabiguates some aspects of Verilog more cleanly.
+and error reporting, as System Verilog disambiguates some aspects of Verilog more cleanly.
 
 ## Fixed Point
 
-Inside RAPcores we have developed a movement interpolater we call the "DDA" or "digital diference amplifier".
+Inside RAPcores we have developed a movement interpolater we call the "DDA" or "digital difference amplifier".
 This has been developed with the team at Synthetos as a translation of the software-approach from their G2 CNC/Robotics firmware
 into a hardware approach in RAPcores. With the DDA we can precisely time and coordinate steps among multiple axes, allowing for linear
 velocity changes given constant acceleration. Currently we treat the DDA as a "step" generator, with the internal
@@ -98,7 +98,7 @@ operate the RAPcore as part of a system-on-chip. Decoupling the state machine fr
 layer should greatly improve flexibility, scalability, and driver interfaces.
 
 We therefore started some research into developing the state machine and register map into a Wishbone-compatible bus,
-with our SPI interface applied as a module ontop of these components.
+with our SPI interface applied as a module on top of these components.
 By using Wishbone bus we should enforce a much cleaner register mapping and simplify the transaction layers
 in the state machine. Our hope is this brings similar resource reduction such as the fixed-point project,
 and also allow enhance capabilities on platforms such as the [Caravel SoC platform](https://efabless.com/).
@@ -120,7 +120,7 @@ and once some major infrastructure issues are sorted our we will begin focused d
 
 As part of [#203](https://github.com/RAPcores/rapcores/pull/203) we were able to increase our base microstep count from 64x to 256x,
 or any arbitrary power of two. The improvement of 256x from 64x on a 200 step/rev stepper motor is minimal,
-but will likely be more noticable on motors with fewer steps/electrical cycles such as BLDC.
+but will likely be more noticeable on motors with fewer steps/electrical cycles such as BLDC.
 
 ## Conclusion
 
